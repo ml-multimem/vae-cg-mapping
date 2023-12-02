@@ -1,5 +1,4 @@
-"""nn.Modules to assemble the architectures
-TODO write documentation"""
+"""nn.Modules to assemble the architectures"""
 
 import torch
 import torch.nn as nn
