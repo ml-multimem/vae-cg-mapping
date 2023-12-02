@@ -1,5 +1,5 @@
 #### Simulation Data ####
-directory          Datasets/ethane/                # Relative path to the simulation data
+directory          example/ethane/                # Relative path to the simulation data
 trajectory         ethane.dump                     # LAMMPS .dump file with the atomistic trajectory. Expected format : id mol type q x y z ix iy iz fx fy fz
 data_file          ethane.data                     # LAMMPS .data file name
 n_frames           2000                            # Number of frames to load from the trajectory, starting from the beginnning
