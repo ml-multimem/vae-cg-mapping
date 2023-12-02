@@ -81,7 +81,7 @@ class ModelTrainer():
         # Initialize patience
         patience_so_far = 0
          
-        for epoch in range(n_epochs): #TODO count epochs from 1
+        for epoch in range(n_epochs): 
 
             train_loss = self.train_epoch(train_loader)
             if hasattr(self, 'save_properties'):
@@ -198,7 +198,7 @@ class ModelTrainer():
                 }
         if not os.path.exists(self.directory):
             os.mkdir(self.directory) 
-        if epoch < int(self.parameters["n_epochs"])-1: #TODO count epochs from 1
+        if epoch < int(self.parameters["n_epochs"])-1: 
             model_path = self.directory + self.parameters["molname"] + "_best_model_" + self.task + ".pt"  
         else:
             model_path = self.directory + self.parameters["molname"] + "_final_model_" + self.task + ".pt"  

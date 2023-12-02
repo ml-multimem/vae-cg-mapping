@@ -57,8 +57,7 @@ class MolecularFilesReader():
         temp_box = np.zeros([3,2])
         mol_sys.box = np.zeros([n_frames, n_molecules, 3,2])
 
-        dump_lines = self.read_file(dumpfile_path)    # Import the whole dump file   
-                                                # TODO: split the import in case of very big dump files
+        dump_lines = self.read_file(dumpfile_path)    # Import the whole dump file
         lines_per_frame = n_particles_tot+header    # Total lines for each snapshot
         lines_to_read = lines_per_frame*n_frames    # Total lines to consider 
             
