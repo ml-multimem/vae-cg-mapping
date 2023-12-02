@@ -153,8 +153,6 @@ class Plotter():
             components in alphabetical order
         legend: list of str
             names for the series in the plot
-
-        ....TODO: is this a good place to put this method?
         """
 
         losses = [trainer.epoch_train_loss, trainer.epoch_test_loss]
