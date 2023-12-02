@@ -1,0 +1,37 @@
+#### Simulation Data ####
+directory          Datasets/ethane/                # Relative path to the simulation data
+trajectory         ethane.dump                     # LAMMPS .dump file with the atomistic trajectory. Expected format : id mol type q x y z ix iy iz fx fy fz
+data_file          ethane.data                     # LAMMPS .data file name
+n_frames           2000                            # Number of frames to load from the trajectory, starting from the beginnning
+n_atoms_mol        8                               # Number of atoms per molecule. Currently only systems with all equal molecules are supported
+n_molecules        1                               # Number of molecules
+periodic           False                           # Does the systems have periodic boundaries?
+
+#### Training Parameters ####
+learning_rate      0.1                             # Learning rate
+decay_ratio        0.1                             # Decay ratio
+batch_size         100                             # Batch size
+patience           10                              # Training patience = consecutive epochs with loss change below min_change will cause training to stop
+min_change         0.01                            # After a number of epochs (defined by "patience") with the loss change below min_change the training will stop.
+n_epochs           50                              # Number of training epochs
+device             cpu                             # Specify the backend for training: cpu or cuda. If cuda is unavailable, it defaults to cpu.
+
+#### Model Parameters ####
+n_CG_mol           2                               # Number of CG moieties per molecule (size of the latent dimension)
+n_layers           1                               # Number of layers in the decoder
+feature            distances                       # Feature used as input for the model. Accepted values: coordinates, distances 
+forces_weight      0.1                             # "Rho parameter": weighting factor for the force term in the loss function
+loss_selector      normal_rec_and_forces           # Loss function to use. Accepted values: only_rec, only_forces, rec_and_forces, normal_rec_and_forces, normal_rec_forces_connect
+tmin               0.2                             # Lower limit for the temperature parameter in gumbel softmax (Initial value 4)
+noise_scaling      0.1                             # Scaling factor for the gumbel-noise used during training (default 0.1) 
+train_amount       0.8                             # Fraction of data used for training, between 0 and 1. Type = float
+
+#### Output Parameters ####
+number_of_outputs  1                               # Number of candidate mappings to generate. Type = int
+max_attempts       1                               # Maximum number of mapping trials. Type = int
+overwrite          False                           # Overwrite previous output (yes) or create a new folder for the current run (no)
+save_every         20                              # Frequency of saving the model: 0 means only final output
+VMD_flag           True                            # Output VMD renderings
+plot_flag          True                            # Output loss plots and assignment
+save_also          n_CG                            # Other property to export during training: n_CG (number of used GC beads)
+run_description    test                            # Description of the run scope
