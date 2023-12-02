@@ -1,4 +1,3 @@
-from queue import Empty
 import numpy as np
 
 class MolecularSystem():
