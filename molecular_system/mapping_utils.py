@@ -82,7 +82,7 @@ class AtomisticToCGMapper():
         forces: torch tensor
             shape [n frames in batch, n atoms, 3] 
             atomistic forces for a batch
-        encoder: TODO pass CG directly?
+        encoder: nn.Module
         """
         CG = self.assignment_matrix(encoder)
             # size of CG = [N_cg,n_atoms_per_molecule] 
