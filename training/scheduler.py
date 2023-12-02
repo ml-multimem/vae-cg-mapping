@@ -26,7 +26,7 @@ class TScheduler():
 
         # Calculate vector of temperature values for each epoch following
         # an exponential decay until the tmin value is reached
-        epoch = np.linspace(0, n_epochs+1, n_epochs+1) #TODO remove need for +1
+        epoch = np.linspace(0, n_epochs+1, n_epochs+1) 
         decay_epoch = int(n_epochs * decay_ratio) + 0.5 
                                 # + 0.5 added to round always at least to 1  
                                 # and not divide by 0 in the next line
