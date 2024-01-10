@@ -79,3 +79,5 @@ Tested with the following package versions:
 - `VMD_flag`: Output VMD renderings (True or False).
 - `plot_flag`: Output loss plots and assignment (True or False).
 - `save_also`: Other property to export during training (e.g., n_CG).
+
+Inspired by [Wang, Gómez-Bombarelli, npj Comput Mater 5, 125 (2019)](https://github.com/learningmatter-mit/Coarse-Graining-Auto-encoders)
